@@ -19,32 +19,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Live REST API Drawer
-  const apiToggle = document.getElementById("apiToggle");
-  const apiPre = document.getElementById("apiPre");
-
-  if (apiToggle && apiPre) {
-    let loaded = false;
-    apiToggle.addEventListener("click", async () => {
-      const isVisible = apiPre.classList.toggle("visible");
-      apiToggle.querySelector(".toggle-icon").textContent = isVisible ? "▲ Collapse" : "▼ Preview JSON";
-
-      if (isVisible && !loaded) {
-        try {
-          const res = await fetch("/api/profile");
-          if (res.ok) {
-            const data = await res.json();
-            apiPre.textContent = JSON.stringify(data, null, 2);
-            loaded = true;
-          } else {
-            apiPre.textContent = "// Error fetching /api/profile";
+  // Smooth scroll and auto-focus for Hire Me & Contact buttons
+  document.querySelectorAll('a[href="#contact"]').forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        e.preventDefault();
+        // Close mobile nav if open
+        if (nav && nav.classList.contains("open")) {
+          nav.classList.remove("open");
+          if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.textContent = "☰";
           }
-        } catch (e) {
-          apiPre.textContent = "// Could not connect to API: " + e.message;
         }
+        contactSection.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+          const nameInput = document.getElementById("name");
+          if (nameInput) {
+            nameInput.focus();
+          }
+        }, 600);
       }
     });
-  }
+  });
 
   // Set year if element exists
   const yearEl = document.getElementById("year");
