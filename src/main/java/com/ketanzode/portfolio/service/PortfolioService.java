@@ -1,0 +1,141 @@
+package com.ketanzode.portfolio.service;
+
+import com.ketanzode.portfolio.model.CertificationRecord;
+import com.ketanzode.portfolio.model.ContactRequest;
+import com.ketanzode.portfolio.model.EducationRecord;
+import com.ketanzode.portfolio.model.ExperienceRecord;
+import com.ketanzode.portfolio.model.PortfolioProfile;
+import com.ketanzode.portfolio.model.SkillGroup;
+import com.ketanzode.portfolio.model.StatRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+@Service
+public class PortfolioService {
+
+    private static final Logger log = LoggerFactory.getLogger(PortfolioService.class);
+
+    public record SubmittedContact(
+            String name,
+            String email,
+            String subject,
+            String message,
+            LocalDateTime timestamp
+    ) {}
+
+    private final List<SubmittedContact> submittedContacts = new CopyOnWriteArrayList<>();
+
+    public PortfolioProfile getProfile() {
+        return new PortfolioProfile(
+                "Ketan Zode",
+                "KZ",
+                "PHP / Laravel Developer & SEO Executive",
+                "Building useful things for the ",
+                "web.",
+                "",
+                "Results-driven PHP/Laravel Developer with 1.5+ years of hands-on experience in building web applications, admin panels, REST APIs, and database-driven solutions. Skilled in Laravel, PHP, MySQL, JavaScript, AJAX, Bootstrap, and MVC architecture. Experienced working with UK-based clients and delivering technical improvements alongside SEO optimization tasks. Seeking a software development role to contribute strong backend development skills and grow as a professional developer.",
+                "Pune, Maharashtra, India",
+                "zodeketan50@gmail.com",
+                "https://github.com/ketanzode50",
+                "https://linkedin.com/in/ketanz",
+                List.of(
+                        new StatRecord("1.5+", "Years of hands-on experience"),
+                        new StatRecord("10+", "Core tools & technologies"),
+                        new StatRecord("UK", "Client website experience"),
+                        new StatRecord("100%", "Dedication to code quality")
+                ),
+                List.of(
+                        new ExperienceRecord(
+                                "JULY 2024 — PRESENT",
+                                "PHP Laravel Developer & SEO Executive",
+                                "Blazenix IT Consulting",
+                                "Surat, India",
+                                "Current role",
+                                List.of(
+                                        "Developed and maintained full-stack web applications using PHP and Laravel following the Controller-Service-Repository-Model architecture pattern.",
+                                        "Built dynamic admin panel modules including order history, Marketing Material Requests, Color Folder Requests, and chatbot CRUD using DataTables and AJAX.",
+                                        "Implemented reusable Blade components and SweetAlert2 modal notifications across the application.",
+                                        "Worked on client websites for UK-based businesses and supported SEO improvements, technical fixes, and structured data implementation.",
+                                        "Managed schema markup such as BreadcrumbList, LocalBusiness, Service, and FAQ for better search visibility.",
+                                        "Performed keyword analysis, meta tag optimization, and URL structure improvements using Google Search Console, SEMrush, and Ahrefs."
+                                )
+                        ),
+                        new ExperienceRecord(
+                                "2023",
+                                "Web Development Intern",
+                                "ARDSOFT IT Solution Pvt. Ltd.",
+                                "Nagpur, India",
+                                "Foundation",
+                                List.of(
+                                        "Assisted in developing database-driven web applications using PHP, MySQL, HTML, CSS, and JavaScript.",
+                                        "Worked on CRUD operations, user authentication, and backend functionality.",
+                                        "Contributed to e-commerce website development including product and order management features.",
+                                        "Collaborated with team members using Git and followed software development best practices."
+                                )
+                        )
+                ),
+                List.of(
+                        "Developed Laravel-based modules for admin management, request forms, and chatbot CRUD with AJAX and DataTables.",
+                        "Supported SEO work for UK-based client websites and implemented structured data, meta tags, and technical improvements.",
+                        "Improved website content and crawlability through keyword research, schema markup, and internal linking fixes.",
+                        "Worked with both backend development and SEO tasks, giving exposure to technical and client-facing work."
+                ),
+                List.of(
+                        new SkillGroup("Programming Languages", List.of("PHP", "JavaScript", "Python (basics)", "Java (basics)", "HTML5", "CSS3")),
+                        new SkillGroup("Frameworks & Libraries", List.of("Laravel", "Bootstrap", "jQuery", "AJAX", "Blade Templating")),
+                        new SkillGroup("Database Systems", List.of("MySQL", "phpMyAdmin")),
+                        new SkillGroup("SEO Tools", List.of("SEMrush", "Ahrefs", "Google Search Console", "Google Analytics", "Microsoft Clarity")),
+                        new SkillGroup("Schema & Structured Data", List.of("JSON-LD", "BreadcrumbList", "LocalBusiness", "Service", "FAQ Schema", "Sitelinks Searchbox")),
+                        new SkillGroup("DevOps & Version Control", List.of("Git", "GitHub", "Composer", "npm", "cPanel")),
+                        new SkillGroup("Other Tools & APIs", List.of("DataTables", "SweetAlert2", "REST APIs", "Postman", "VS Code", "Microsoft Excel")),
+                        new SkillGroup("Architecture Patterns", List.of("MVC", "Controller-Service-Repository-Model", "RESTful API Design"))
+                ),
+                List.of(
+                        new EducationRecord(
+                                "2024 — PRESENT (SEM IV)",
+                                "Master of Computer Applications (MCA) – CBCS",
+                                "Kamla Nehru Mahavidyalaya, Nagpur · RTM Nagpur University",
+                                "Nagpur, India",
+                                "Coursework: Data Mining, Machine Learning Fundamentals, Advanced Web Technologies",
+                                true
+                        ),
+                        new EducationRecord(
+                                "2021 — 2023",
+                                "Bachelor of Science – Computer Science (B.Sc. CS)",
+                                "Shivaji Science College, Pauni",
+                                "Maharashtra, India",
+                                "",
+                                false
+                        )
+                ),
+                List.of(
+                        new CertificationRecord("Ahrefs SEO Certification", "Ahrefs Academy"),
+                        new CertificationRecord("SEMrush SEO Certification", "SEMrush Academy")
+                ),
+                List.of("English", "Hindi", "Marathi"),
+                List.of("Web Development", "Search Engine Optimization", "Artificial Intelligence & Machine Learning", "Digital Marketing")
+        );
+    }
+
+    public boolean recordContact(ContactRequest request) {
+        log.info("Received new contact submission from {} <{}>: Subject: {}",
+                request.getName(), request.getEmail(), request.getSubject());
+        submittedContacts.add(new SubmittedContact(
+                request.getName(),
+                request.getEmail(),
+                request.getSubject(),
+                request.getMessage(),
+                LocalDateTime.now()
+        ));
+        return true;
+    }
+
+    public List<SubmittedContact> getSubmittedContacts() {
+        return List.copyOf(submittedContacts);
+    }
+}
