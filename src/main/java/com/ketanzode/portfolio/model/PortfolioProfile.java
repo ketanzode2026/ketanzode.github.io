@@ -21,5 +21,7 @@ public record PortfolioProfile(
         List<EducationRecord> educations,
         List<CertificationRecord> certifications,
         List<String> spokenLanguages,
-        List<String> interests
+        List<String> interests,
+        List<ServiceOffering> services,
+        List<FaqItem> faqs
 ) {}
