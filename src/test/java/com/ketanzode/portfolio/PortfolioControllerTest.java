@@ -45,7 +45,8 @@ class PortfolioControllerTest {
                 .andExpect(jsonPath("$.email").value("zodeketan50@gmail.com"))
                 .andExpect(jsonPath("$.location").value("Pune, Maharashtra, India"))
                 .andExpect(jsonPath("$.experiences[0].company").value("Blazenix IT Consulting"))
-                .andExpect(jsonPath("$.experiences[1].company").value("ARDSOFT IT Solution Pvt. Ltd."));
+                .andExpect(jsonPath("$.experiences[1].company").value("ARDSOFT IT Solution Pvt. Ltd."))
+                .andExpect(jsonPath("$.educations[0].period").value("2024 — 2026 (COMPLETED)"));
     }
 
     @Test

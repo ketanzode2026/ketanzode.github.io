@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="18" fill="#0f1f23"/>
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#0d5c5d" stroke-width="2"/>
+  <text x="32" y="42" font-family="'DM Mono', monospace, -apple-system, sans-serif" font-size="26" font-weight="800" fill="#c5f36b" text-anchor="middle" letter-spacing="-1">KZ</text>
+</svg>

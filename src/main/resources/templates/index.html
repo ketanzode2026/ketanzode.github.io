@@ -37,6 +37,11 @@
     gtag('config', 'G-EXXWQM4LXF');
   </script>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" th:href="@{/favicon.png}" href="/favicon.png">
+  <link rel="apple-touch-icon" th:href="@{/favicon.png}" href="/favicon.png">
+
   <!-- Typography & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -417,13 +422,13 @@
             <h2>Academic background<br>&amp; Credentials.</h2>
           </div>
           <p class="section-intro">
-            Master of Computer Applications student with verified SEO and technical credentials.
+            Master of Computer Applications (MCA) graduate with verified SEO and technical credentials.
           </p>
         </div>
         <div class="edu-cert-grid">
           <div>
             <article class="education-card" th:each="edu : ${profile.educations}">
-              <small th:text="${edu.period}">2024 — PRESENT (SEM IV)</small>
+              <small th:text="${edu.period}">2024 — 2026 (COMPLETED)</small>
               <h3 th:text="${edu.degree}">Master of Computer Applications (MCA) – CBCS</h3>
               <p th:text="|${edu.institution} · ${edu.location}|">Kamla Nehru Mahavidyalaya, Nagpur</p>
               <p th:if="${!#strings.isEmpty(edu.coursework)}" class="coursework" th:text="${edu.coursework}">Coursework: Data Mining, ML</p>

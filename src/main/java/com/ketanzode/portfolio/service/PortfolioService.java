@@ -99,7 +99,7 @@ public class PortfolioService {
                 ),
                 List.of(
                         new EducationRecord(
-                                "2024 — PRESENT (SEM IV)",
+                                "2024 — 2026 (COMPLETED)",
                                 "Master of Computer Applications (MCA) – CBCS",
                                 "Kamla Nehru Mahavidyalaya, Nagpur · RTM Nagpur University",
                                 "Nagpur, India",
