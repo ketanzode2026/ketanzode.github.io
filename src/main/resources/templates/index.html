@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" th:content="|Portfolio of ${profile.name}, ${profile.heroRole}.|">
+  <title th:text="|${profile.name} — ${profile.heroRole}|">Ketan Zode — PHP / Laravel Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/portfolio.css}" href="/css/portfolio.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell">
+      <nav id="nav">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-mark" th:text="${profile.initials}">KZ</span>
+          <span th:text="${profile.name}">Ketan Zode</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-cta" th:href="|mailto:${profile.email}|">Let's talk <span>↗</span></a>
+        <button class="menu-button" id="menuButton" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="shell">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">
+            <span></span>
+            <th:block th:text="${profile.heroRole}">PHP / Laravel Developer & SEO Executive</th:block>
+          </div>
+          <h1>
+            <span th:text="${profile.headlinePrefix}">Building useful things for the </span>
+            <em th:text="${profile.headlineEmphasis}">web.</em>
+          </h1>
+          <p class="hero-copy" th:text="${profile.objective}">
+            Results-driven PHP/Laravel Developer with 1.5+ years of hands-on experience in building web applications, admin panels, REST APIs, and database-driven solutions.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#experience">Explore my work <span>↓</span></a>
+            <a class="button light" href="#contact">Get in touch</a>
+          </div>
+          <p class="hero-note">
+            <strong>Ketan Zode</strong> · <span th:text="${profile.location}">Pune, Maharashtra, India</span>
+          </p>
+        </div>
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <div class="initials" th:text="${profile.initials}">KZ</div>
+          </div>
+          <div class="availability">
+            <i></i> <span>Open to opportunities</span>
+          </div>
+          <div class="stamp">CODE<br>WITH<br>CARE</div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat" th:each="st : ${profile.stats}">
+          <strong th:text="${st.value}">1.5+</strong>
+          <span th:text="${st.label}">Years of experience</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Objective / About Section -->
+    <section id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">01 / Career Objective</div>
+            <h2>Purpose &amp;<br>Dedication.</h2>
+          </div>
+          <p class="section-intro">
+            Seeking a software development role to contribute strong backend engineering skills and grow as a professional developer.
+          </p>
+        </div>
+        <div class="objective-card">
+          <p class="objective-text" th:text="${profile.objective}">
+            Results-driven PHP/Laravel Developer with 1.5+ years of hands-on experience in building web applications, admin panels, REST APIs, and database-driven solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">02 / Experience</div>
+            <h2>Work history &amp;<br>Contributions.</h2>
+          </div>
+          <p class="section-intro">
+            Proven track record in Controller-Service-Repository-Model architecture, admin panel development, and technical client delivery.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="role" th:each="role : ${profile.experiences}">
+            <div class="role-date" th:text="${role.period}">JULY 2024 — PRESENT</div>
+            <div>
+              <h3 th:text="${role.role}">PHP Laravel Developer & SEO Executive</h3>
+              <div class="role-company" th:text="|${role.company} · ${role.location}|">Blazenix IT Consulting · Surat, India</div>
+              <ul>
+                <li th:each="point : ${role.bulletPoints}" th:text="${point}">Responsibility detail</li>
+              </ul>
+            </div>
+            <div class="role-tag" th:text="${role.tag}">Current role</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Achievements Section -->
+    <section id="achievements">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">03 / Key Achievements</div>
+            <h2>Milestones &amp;<br>Impact.</h2>
+          </div>
+          <p class="section-intro">
+            Key deliverables across backend functionality, technical SEO, and client-facing web engineering.
+          </p>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-card" th:each="ach, iterStat : ${profile.achievements}">
+            <div class="achievement-icon" th:text="${iterStat.count}">1</div>
+            <p th:text="${ach}">Achievement detail</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Matrix Section -->
+    <section id="skills" style="background: #fafcfb;">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">04 / Technical Skills</div>
+            <h2>Tools &amp;<br>Technologies.</h2>
+          </div>
+          <p class="section-intro">
+            A comprehensive breakdown of programming languages, frameworks, architecture patterns, and tools.
+          </p>
+        </div>
+        <div class="skills-matrix">
+          <div class="skill-category" th:each="group : ${profile.skillGroups}">
+            <h3 th:text="${group.category}">Programming Languages</h3>
+            <div class="skill-pills">
+              <span class="skill-pill" th:each="item : ${group.skills}" th:text="${item}">PHP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">05 / Education &amp; Certifications</div>
+            <h2>Academic background<br>&amp; Credentials.</h2>
+          </div>
+          <p class="section-intro">
+            Master of Computer Applications student with verified SEO and technical certifications.
+          </p>
+        </div>
+        <div class="edu-cert-grid">
+          <div>
+            <article class="education-card" th:each="edu : ${profile.educations}">
+              <small th:text="${edu.period}">2024 — PRESENT (SEM IV)</small>
+              <h3 th:text="${edu.degree}">Master of Computer Applications (MCA) – CBCS</h3>
+              <p th:text="|${edu.institution} · ${edu.location}|">Kamla Nehru Mahavidyalaya, Nagpur</p>
+              <p th:if="${!#strings.isEmpty(edu.coursework)}" class="coursework" th:text="${edu.coursework}">Coursework: Data Mining, ML</p>
+            </article>
+          </div>
+
+          <div>
+            <div class="cert-card" th:each="cert : ${profile.certifications}">
+              <div>
+                <strong th:text="${cert.name}">Ahrefs SEO Certification</strong>
+                <span th:text="${cert.issuer}">Ahrefs Academy</span>
+              </div>
+              <span class="cert-badge">Verified</span>
+            </div>
+
+            <div class="meta-box">
+              <h4>Languages</h4>
+              <div class="skill-pills">
+                <span class="skill-pill" th:each="lang : ${profile.spokenLanguages}" th:text="${lang}">English</span>
+              </div>
+
+              <h4 style="margin-top: 16px;">Interests</h4>
+              <div class="skill-pills">
+                <span class="skill-pill" th:each="interest : ${profile.interests}" th:text="${interest}">Web Development</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live REST API Inspector Drawer
+        <div class="api-drawer" id="api">
+          <div class="api-drawer-head" id="apiToggle">
+            <div class="api-drawer-title">
+              <span class="api-method">GET</span>
+              <code>/api/profile</code>
+              <span>— Live Spring Boot REST Endpoint</span>
+            </div>
+            <span class="toggle-icon">▼ Preview JSON</span>
+          </div>
+          <pre class="api-pre" id="apiPre">Loading API data...</pre>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="shell">
+        <div class="contact-box">
+          <div class="contact-info">
+            <div class="section-label">06 / Start a conversation</div>
+            <h2>Let's build something together.</h2>
+            <p>
+              Whether you have an opportunity or want to discuss full-stack web development and technical SEO, I’d love to connect.
+            </p>
+            <div class="contact-links">
+              <a th:href="|mailto:${profile.email}|">
+                <span th:text="${profile.email}">zodeketan50@gmail.com</span> ↗
+              </a>
+              <a th:href="${profile.linkedinUrl}" target="_blank" rel="noreferrer">
+                LinkedIn / ketanz ↗
+              </a>
+              <a th:href="${profile.githubUrl}" target="_blank" rel="noreferrer">
+                GitHub / ketanzode50 ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Dynamic Spring MVC Contact Form -->
+          <div class="contact-form">
+            <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}">
+              Message sent successfully!
+            </div>
+            <div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}">
+              Please correct errors.
+            </div>
+
+            <form th:action="@{/contact}" th:object="${contactRequest}" method="post">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Jane Doe" required>
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="form-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="jane@example.com" required>
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="form-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" th:field="*{subject}" class="form-control" placeholder="Project or Role inquiry">
+                <div th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}" class="form-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" th:field="*{message}" class="form-control" rows="4" placeholder="Your message here..." required></textarea>
+                <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}" class="form-error"></div>
+              </div>
+
+              <button type="submit" class="button btn-submit">Send Message <span>↗</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="shell">
+    <footer>
+      <span>© <b id="year" th:text="${currentYear}">2026</b> <span th:text="${profile.name}">Ketan Zode</span></span>
+      <div class="footer-meta">
+        <span>Java &amp; Spring Boot Web App</span>
+        <span>•</span>
+        <span>Pune, Maharashtra, India</span>
+      </div>
+    </footer>
+  </div>
+
+  <script th:src="@{/js/portfolio.js}" src="/js/portfolio.js"></script>
+</body>
+</html>
