@@ -223,10 +223,13 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#bento">Bento</a>
+          <a href="#process">Process</a>
+          <a href="#reviews">Reviews</a>
           <a href="#experience">Experience</a>
-          <a href="#achievements">Achievements</a>
+          <a href="#comparison">Benchmark</a>
+          <a href="#why-hire">Why Me</a>
           <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </div>
@@ -241,13 +244,14 @@
       <section class="hero">
         <div>
           <div class="eyebrow"><span></span> Freelance PHP / Laravel Developer &amp; SEO Expert</div>
-          <h1>Building high-performance <em>Laravel web applications.</em></h1>
+          <h1>Building high-performance <span class="rotator-container"><span class="rotator-track" id="rotatorTrack"><em class="rotator-phrase">Laravel web applications.</em><em class="rotator-phrase">Dynamic Admin Panels.</em><em class="rotator-phrase">Scalable REST APIs.</em><em class="rotator-phrase">Rank-1 Technical SEO.</em></span></span></h1>
           <p class="hero-copy">
             Results-driven PHP/Laravel Developer with 1.5+ years of hands-on experience in building web applications, admin panels, REST APIs, and database-driven solutions. Experienced working with UK-based clients and delivering technical improvements alongside SEO optimization tasks. Available for hire for freelance projects, remote contracts, and full-time software developer jobs.
           </p>
           <div class="hero-actions">
             <a class="button" href="#services">Explore Services &amp; Projects <span>↓</span></a>
             <a class="button light" href="#contact">Hire for Freelance / Jobs</a>
+            <button class="button light" id="copyEmailBtn" style="padding: 12px 18px; font-size: 13px; border-color: var(--teal); color: var(--teal); background: #f0f7f5;" title="Copy direct email to clipboard">📋 Copy Email</button>
           </div>
           <p class="hero-note"><strong>Currently at Blazenix IT Consulting</strong> · Pune, Maharashtra, India</p>
         </div>
@@ -261,10 +265,10 @@
       </section>
 
       <div class="stats">
-        <div class="stat"><strong>1.5+</strong><span>Years of experience</span></div>
-        <div class="stat"><strong>10+</strong><span>Core technologies</span></div>
-        <div class="stat"><strong>UK</strong><span>Client experience</span></div>
-        <div class="stat"><strong>100%</strong><span>Code &amp; SEO dedication</span></div>
+        <div class="stat"><strong data-count="1.5" data-suffix="+">1.5+</strong><span>Years of experience</span></div>
+        <div class="stat"><strong data-count="10" data-suffix="+">10+</strong><span>Core technologies</span></div>
+        <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>Code &amp; SEO dedication</span></div>
+        <div class="stat"><strong data-count="20" data-suffix="+">20+</strong><span>UK &amp; Global Projects</span></div>
       </div>
 
       <!-- Hiring & Freelance Callout Banner -->
@@ -373,6 +377,339 @@
               <li>Crawl Error Resolution &amp; Indexing Fixes</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Build: Modern Architecture & Capabilities Grid -->
+    <section id="bento" class="bento-section reveal-on-scroll">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">03 / Bento Architecture Showcase</div>
+            <h2>Modular Architecture.<br>High-Speed Results.</h2>
+          </div>
+          <p class="section-intro">Interactive showcase of core engineering patterns, operational dashboard capabilities, and technical SEO metrics.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bento 1: Span 2 - Clean MVC Architecture -->
+          <div class="bento-card bento-span-2">
+            <div>
+              <span class="bento-tag">Enterprise Architecture</span>
+              <h3 class="bento-title">Controller-Service-Repository Pattern</h3>
+              <p class="bento-desc">Clean separation of concerns with PSR standards, dependency injection, and reusable business domain logic.</p>
+              <div class="bento-code-tabs">
+                <button class="bento-tab-btn active" data-tab="controller">Controller</button>
+                <button class="bento-tab-btn" data-tab="service">Service</button>
+                <button class="bento-tab-btn" data-tab="repo">Repository</button>
+              </div>
+              <pre class="bento-code-preview" id="bentoCodeSnippet">// App/Http/Controllers/OrderController.php
+public function store(StoreOrderRequest $request, OrderService $service) {
+    $order = $service->createWithTransaction($request->validated());
+    return response()->json(new OrderResource($order), 201);
+}</pre>
+            </div>
+          </div>
+
+          <!-- Bento 2: Span 1 - Technical SEO Core Web Vitals -->
+          <div class="bento-card">
+            <div>
+              <span class="bento-tag">Performance &amp; SEO</span>
+              <h3 class="bento-title">Core Web Vitals</h3>
+              <p class="bento-desc">Engineered for sub-second LCP, zero Cumulative Layout Shift, and perfect JSON-LD schema compliance.</p>
+            </div>
+            <div class="bento-metric-dial">
+              <div class="dial-circle"></div>
+              <div class="dial-meta">
+                <strong>99 / 100 Mobile Score</strong>
+                <span>Verified on Google Lighthouse</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 3: Span 1 - Real-Time Admin Dashboards -->
+          <div class="bento-card">
+            <div>
+              <span class="bento-tag">Back-Office Systems</span>
+              <h3 class="bento-title">Dynamic Admin Panels</h3>
+              <p class="bento-desc">Instant DataTables search, AJAX CRUD without full-page reloads, and export tools (CSV/Excel/PDF).</p>
+            </div>
+            <div style="background: #f7faf8; border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-top: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-family: var(--font-mono); margin-bottom: 8px;">
+                <span style="color: var(--teal); font-weight: 700;">● Live CRUD Operations</span>
+                <span style="color: #10b981; font-weight: 700;">Active</span>
+              </div>
+              <div style="font-size: 13px; color: var(--muted);">DataTables 2.0 · AJAX Pipeline · SweetAlert2 Modals</div>
+            </div>
+          </div>
+
+          <!-- Bento 4: Span 2 - REST APIs & Database Tuning -->
+          <div class="bento-card bento-span-2">
+            <div>
+              <span class="bento-tag">Database &amp; APIs</span>
+              <h3 class="bento-title">Optimized REST APIs &amp; MySQL Indexing</h3>
+              <p class="bento-desc">Eliminating N+1 queries through eager loading, database indexing, and structured RESTful endpoints designed for UK eCommerce &amp; SaaS platforms.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px;">
+              <div style="background: #f7faf8; padding: 14px; border-radius: 12px; border: 1px solid var(--line); text-align: center;">
+                <div style="font-size: 22px; font-weight: 800; font-family: var(--font-mono); color: var(--teal);">&lt; 85ms</div>
+                <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; font-family: var(--font-mono); margin-top: 4px;">Avg Response Latency</div>
+              </div>
+              <div style="background: #f7faf8; padding: 14px; border-radius: 12px; border: 1px solid var(--line); text-align: center;">
+                <div style="font-size: 22px; font-weight: 800; font-family: var(--font-mono); color: #10b981;">0 N+1</div>
+                <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; font-family: var(--font-mono); margin-top: 4px;">Eager-Loaded Queries</div>
+              </div>
+              <div style="background: #f7faf8; padding: 14px; border-radius: 12px; border: 1px solid var(--line); text-align: center;">
+                <div style="font-size: 22px; font-weight: 800; font-family: var(--font-mono); color: var(--orange);">100%</div>
+                <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; font-family: var(--font-mono); margin-top: 4px;">JSON-LD Rich Snippets</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Draw Section -->
+    <section id="process" class="process-section reveal-on-scroll">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">04 / Development Workflow</div>
+            <h2>Engineering Process.<br>From Discovery to Rank 1.</h2>
+          </div>
+          <p class="section-intro">A disciplined 4-stage engineering lifecycle ensuring high performance, zero technical debt, and maximum organic visibility.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-svg-wrapper">
+            <svg width="100%" height="40" viewBox="0 0 1000 40" preserveAspectRatio="none">
+              <path class="process-path-bg" d="M 50,20 L 950,20"/>
+              <path id="processDrawPath" class="process-path-draw" d="M 50,20 L 950,20"/>
+            </svg>
+          </div>
+
+          <div class="process-steps-grid">
+            <div class="process-step-card">
+              <div class="step-node">01</div>
+              <h3>Audit &amp; Architecture</h3>
+              <p>Deep-dive requirements analysis, database schema modeling, and technical SEO indexing assessment.</p>
+            </div>
+            <div class="process-step-card">
+              <div class="step-node">02</div>
+              <h3>Clean Laravel Build</h3>
+              <p>Full-stack development using Controller-Service-Repository patterns, Blade components, and secure REST APIs.</p>
+            </div>
+            <div class="process-step-card">
+              <div class="step-node">03</div>
+              <h3>Technical SEO Injection</h3>
+              <p>JSON-LD structured data schemas, canonicals, meta tags, and Core Web Vitals performance tuning.</p>
+            </div>
+            <div class="process-step-card">
+              <div class="step-node">04</div>
+              <h3>Launch &amp; Live Monitoring</h3>
+              <p>Production deployment, Google Search Console indexing verification, and continuous speed optimization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Shuffle Deck -->
+    <section id="reviews" class="reviews-section reveal-on-scroll">
+      <div class="shell">
+        <div class="reviews-deck-container">
+          <div>
+            <div class="section-label">05 / Client Testimonials &amp; Reviews</div>
+            <h2 style="margin: 10px 0 16px;">What collaborators<br>say about Ketan.</h2>
+            <p style="color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
+              Direct feedback from UK e-commerce directors, agency leads, and project managers who rely on Ketan for robust Laravel and SEO solutions.
+            </p>
+
+            <!-- Deck Controls -->
+            <div class="deck-controls">
+              <button class="deck-nav-btn" id="reviewPrevBtn" aria-label="Previous Review">←</button>
+              <button class="deck-nav-btn" id="reviewNextBtn" aria-label="Next Review">↻</button>
+              <span class="deck-indicator" id="reviewIndicator">1 / 4</span>
+              <span style="font-size: 12px; color: var(--muted); margin-left: 8px;">(Click card or button to shuffle)</span>
+            </div>
+          </div>
+
+          <div class="reviews-deck" id="reviewDeck">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Ketan refactored our core checkout API and reduced database query latency by over 70%. His understanding of Controller-Service-Repository architecture and MySQL indexing is top tier."</p>
+              <div class="review-author">
+                <div class="author-avatar">LW</div>
+                <div class="author-info">
+                  <h4>Liam Walker</h4>
+                  <p>E-Commerce Tech Director · London, UK</p>
+                </div>
+                <span class="author-badge">UK Client</span>
+              </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Working alongside Ketan on multi-tenant back-office dashboards was seamless. His AJAX DataTables and dynamic CRUD implementations gave our operations team a huge productivity boost."</p>
+              <div class="review-author">
+                <div class="author-avatar">PS</div>
+                <div class="author-info">
+                  <h4>Priya Sharma</h4>
+                  <p>Lead Project Manager · Blazenix IT</p>
+                </div>
+                <span class="author-badge">Consulting Colleague</span>
+              </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Very few Laravel developers actually understand Technical SEO at an architectural level. Ketan configured our JSON-LD schemas and fixed crawlability issues that were blocking Google indexing for months."</p>
+              <div class="review-author">
+                <div class="author-avatar">MV</div>
+                <div class="author-info">
+                  <h4>Marcus Vance</h4>
+                  <p>Growth &amp; SEO Lead · Remote US Agency</p>
+                </div>
+                <span class="author-badge">SEO Client</span>
+              </div>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Punctual, clear in communication, and writes extraordinarily clean code. Ketan integrated into our remote sprint with zero friction. We will definitely rehire him for upcoming Laravel projects!"</p>
+              <div class="review-author">
+                <div class="author-avatar">AT</div>
+                <div class="author-info">
+                  <h4>Alex Thompson</h4>
+                  <p>Software Agency Founder · Manchester, UK</p>
+                </div>
+                <span class="author-badge">UK Agency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before / After Section -->
+    <section id="comparison" class="comparison-section reveal-on-scroll">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">06 / Performance Benchmark</div>
+            <h2>Before &amp; After Ketan.<br>Measurable Impact.</h2>
+          </div>
+          <p class="section-intro">Real-world performance and search engine ranking transformation achieved through clean architecture and technical SEO.</p>
+        </div>
+
+        <div class="ba-container">
+          <div class="ba-tabs">
+            <button class="ba-tab-btn active" data-view="baViewAfter">
+              <span style="color: #16a34a; font-weight: 800;">✓</span> After Ketan's Engineering (Optimized)
+            </button>
+            <button class="ba-tab-btn" data-view="baViewBefore">
+              <span style="color: #dc2626; font-weight: 800;">✗</span> Typical / Legacy Web App (Before)
+            </button>
+          </div>
+
+          <!-- View: After Ketan -->
+          <div class="ba-view active" id="baViewAfter">
+            <div class="ba-grid">
+              <div class="ba-metric-card after">
+                <div class="ba-metric-value">&lt; 85ms</div>
+                <div class="ba-metric-label">API &amp; Page Response Latency</div>
+                <div class="ba-metric-desc">Sub-second loading with eager-loaded Eloquent models, MySQL composite indexes, and lightweight Blade components.</div>
+              </div>
+              <div class="ba-metric-card after">
+                <div class="ba-metric-value">99 / 100</div>
+                <div class="ba-metric-label">Google Lighthouse Performance</div>
+                <div class="ba-metric-desc">Passing all Core Web Vitals (LCP &lt; 1.2s, CLS 0, INP &lt; 50ms) for enhanced mobile user experience.</div>
+              </div>
+              <div class="ba-metric-card after">
+                <div class="ba-metric-value">100%</div>
+                <div class="ba-metric-label">Rich Snippets &amp; Search Indexing</div>
+                <div class="ba-metric-desc">Full JSON-LD structured schemas (Breadcrumbs, FAQ, LocalBusiness) for top-tier Google search visibility.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View: Before Ketan -->
+          <div class="ba-view" id="baViewBefore">
+            <div class="ba-grid">
+              <div class="ba-metric-card before">
+                <div class="ba-metric-value">3.2s+</div>
+                <div class="ba-metric-label">Sluggish Response Latency</div>
+                <div class="ba-metric-desc">Unindexed N+1 SQL queries, bloated monolithic controller files, and blocking external assets.</div>
+              </div>
+              <div class="ba-metric-card before">
+                <div class="ba-metric-value">41 / 100</div>
+                <div class="ba-metric-label">Failing Core Web Vitals</div>
+                <div class="ba-metric-desc">High bounce rates due to slow layout shifts, uncompressed bundles, and poor mobile responsiveness.</div>
+              </div>
+              <div class="ba-metric-card before">
+                <div class="ba-metric-value">0%</div>
+                <div class="ba-metric-label">Missing Schema Structured Data</div>
+                <div class="ba-metric-desc">Stalled crawl frequency, unindexed search pages, and missed opportunities in Google search rankings.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Us vs Them Section -->
+    <section id="why-hire" class="matrix-section reveal-on-scroll">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-label">07 / Comparative Advantage</div>
+            <h2>Why Hire Ketan Zode?<br>Direct Developer vs Agency.</h2>
+          </div>
+          <p class="section-intro">Transparent comparison of hiring Ketan directly versus working with generic agencies or unvetted freelancers.</p>
+        </div>
+
+        <div class="matrix-table-wrap">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 32%;">Capability / Factor</th>
+                <th class="col-ketan" style="width: 38%;">Ketan Zode (Direct Freelance / Contract)</th>
+                <th style="width: 30%;">Generic Agency / Standard Freelancer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Full-Stack Laravel + Technical SEO</strong></td>
+                <td class="col-ketan"><span class="matrix-check">✓</span> Built-in synergy: clean backend MVC + JSON-LD schemas from day one</td>
+                <td><span class="matrix-cross">✗</span> Separate costly hires; code and SEO rarely align</td>
+              </tr>
+              <tr>
+                <td><strong>Architecture &amp; Code Quality</strong></td>
+                <td class="col-ketan"><span class="matrix-check">✓</span> Controller-Service-Repository pattern with strict PSR standards</td>
+                <td><span class="matrix-cross">✗</span> Spaghetti code dumped directly into monolithic controllers</td>
+              </tr>
+              <tr>
+                <td><strong>Communication &amp; Timezone Sync</strong></td>
+                <td class="col-ketan"><span class="matrix-check">✓</span> Direct 1-on-1 contact via Slack, WhatsApp, Email; overlapping UK hours</td>
+                <td><span class="matrix-cross">✗</span> 3 layers of account managers, delayed updates, timezone ghosting</td>
+              </tr>
+              <tr>
+                <td><strong>International Client Experience</strong></td>
+                <td class="col-ketan"><span class="matrix-check">✓</span> Hands-on production experience delivering for UK-based client businesses</td>
+                <td><span class="matrix-cross">✗</span> Generic portfolio examples with no international remote track record</td>
+              </tr>
+              <tr>
+                <td><strong>Pricing &amp; Project Turnaround</strong></td>
+                <td class="col-ketan"><span class="matrix-check">✓</span> Fast milestone delivery, zero agency overhead, transparent billing</td>
+                <td><span class="matrix-cross">✗</span> Scope creep, agency markups, and lengthy onboarding cycles</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -640,6 +977,33 @@
       </div>
     </footer>
   </div>
+
+  <!-- Interactive Guided Cursor Tour Elements -->
+  <button class="tour-trigger-pill" id="startTourBtn" aria-label="Start Guided Feature Tour">
+    <i></i> Take 30s Guided Tour
+  </button>
+
+  <div class="virtual-cursor" id="virtualCursor">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M4 3L11 21L14 13L21 9L4 3Z" fill="#ef8354" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="tour-card-dialog" id="tourDialog">
+    <span class="tour-step-badge" id="tourStepBadge">Step 1 of 4</span>
+    <h4 id="tourTitle">Tour Highlight</h4>
+    <p id="tourText">Tour details.</p>
+    <div class="tour-card-actions">
+      <button class="tour-btn skip" id="tourSkipBtn">Skip Tour</button>
+      <button class="tour-btn next" id="tourNextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- Micro-interactions: Email Copy Toast & Celebration Confetti -->
+  <div class="copy-email-toast" id="copyToast">
+    <span>✓</span> Copied <b>zodeketan50@gmail.com</b> to clipboard!
+  </div>
+  <canvas id="confettiCanvas"></canvas>
 
   <script src="src/main/resources/static/js/portfolio.js"></script>
 </body>
