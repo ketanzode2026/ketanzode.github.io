@@ -94,6 +94,25 @@ h1 em { color: var(--teal); font-style: normal; }
   position: relative; min-height: 420px; display: grid; place-items: center; overflow: hidden;
   border-radius: 170px 170px 32px 32px; background: linear-gradient(145deg, #0d5c5d, #083b3c); box-shadow: var(--shadow);
 }
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+.portrait:hover .portrait-img {
+  transform: scale(1.02);
+}
+.portrait:has(.portrait-img):before,
+.portrait:has(.portrait-img):after {
+  display: none;
+}
 .portrait:before {
   content: ""; position: absolute; width: 320px; height: 320px;
   border: 1px solid rgba(197, 243, 107, 0.35); border-radius: 50%;
@@ -111,6 +130,7 @@ h1 em { color: var(--teal); font-style: normal; }
 .availability {
   position: absolute; right: 0; top: 60px; display: flex; align-items: center; gap: 8px;
   padding: 12px 16px; background: white; border-radius: 12px; box-shadow: var(--shadow); font-size: 12px; font-weight: 800;
+  z-index: 2;
 }
 .availability i {
   width: 9px; height: 9px; border-radius: 50%; background: #79bd39;
@@ -120,6 +140,7 @@ h1 em { color: var(--teal); font-style: normal; }
   position: absolute; left: -8px; bottom: 30px; width: 94px; height: 94px; display: grid; place-items: center;
   border: 1px dashed var(--orange); border-radius: 50%; color: var(--orange); font: 600 11px var(--font-mono);
   text-align: center; transform: rotate(-15deg); background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(4px);
+  z-index: 2;
 }
 
 /* Stats */
@@ -321,6 +342,7 @@ footer span { font-family: var(--font-mono); }
   .hero { grid-template-columns: 1fr; gap: 40px; padding: 45px 0 65px; }
   .portrait-wrap { max-width: 390px; width: 100%; margin: auto; }
   .portrait { min-height: 320px; }
+  .portrait-img { min-height: 320px; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat { padding: 18px; }
   section { padding: 64px 0; }
